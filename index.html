@@ -1,516 +1,472 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2580
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 LucidaGrande;\f2\fnil\fcharset0 AppleColorEmoji;
-\f3\fnil\fcharset0 Menlo-Regular;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww33100\viewh17480\viewkind0
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Benson Ranjith K — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --red:#e63946;--dark:#050810;--darker:#020508;
+  --panel:#0a0f1e;--border:#1a2a4a;--accent:#00d4ff;
+  --text:#c8d6f0;--bright:#ffffff;--dim:#4a6080;
+  --green:#00ff88;--yellow:#ffd700;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Rajdhani',sans-serif;background:var(--darker);color:var(--text);overflow-x:hidden;cursor:none;}
+#cursor{position:fixed;width:20px;height:20px;border:1px solid var(--red);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform 0.1s;mix-blend-mode:difference;}
+#cursor-dot{position:fixed;width:4px;height:4px;background:var(--red);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);}
 
-\f0\fs24 \cf0 <!DOCTYPE html>\
-<html lang="en">\
-<head>\
-<meta charset="UTF-8">\
-<meta name="viewport" content="width=device-width, initial-scale=1.0">\
-<title>Benson Ranjith K \'97 Portfolio</title>\
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">\
-<style>\
-*\{margin:0;padding:0;box-sizing:border-box\}\
-:root\{\
-  --red:#e63946;--dark:#050810;--darker:#020508;\
-  --panel:#0a0f1e;--border:#1a2a4a;--accent:#00d4ff;\
-  --text:#c8d6f0;--bright:#ffffff;--dim:#4a6080;\
-  --green:#00ff88;--yellow:#ffd700;\
-\}\
-html\{scroll-behavior:smooth\}\
-body\{font-family:'Rajdhani',sans-serif;background:var(--darker);color:var(--text);overflow-x:hidden;cursor:none;\}\
-#cursor\{position:fixed;width:20px;height:20px;border:1px solid var(--red);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform 0.1s;mix-blend-mode:difference;\}\
-#cursor-dot\{position:fixed;width:4px;height:4px;background:var(--red);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);\}\
-\
-.hud-corner\{position:fixed;width:50px;height:50px;pointer-events:none;z-index:100;\}\
-.hud-tl\{top:10px;left:10px;border-top:1px solid var(--red);border-left:1px solid var(--red);\}\
-.hud-tr\{top:10px;right:10px;border-top:1px solid var(--red);border-right:1px solid var(--red);\}\
-.hud-bl\{bottom:10px;left:10px;border-bottom:1px solid var(--red);border-left:1px solid var(--red);\}\
-.hud-br\{bottom:10px;right:10px;border-bottom:1px solid var(--red);border-right:1px solid var(--red);\}\
-\
-nav\{\
-  position:fixed;top:0;left:0;right:0;z-index:500;\
-  display:flex;align-items:center;justify-content:space-between;\
-  padding:12px 40px;\
-  background:linear-gradient(180deg,rgba(2,5,8,0.97) 0%,transparent 100%);\
-  backdrop-filter:blur(4px);\
-\}\
-.nav-logo\{font-family:'Orbitron',monospace;font-size:14px;font-weight:900;color:var(--red);letter-spacing:4px;text-shadow:0 0 20px rgba(230,57,70,0.8);\}\
-.nav-links\{display:flex;gap:28px;\}\
-.nav-links a\{font-family:'Rajdhani',sans-serif;font-size:12px;font-weight:600;color:var(--dim);text-decoration:none;letter-spacing:2px;text-transform:uppercase;transition:color 0.3s;position:relative;\}\
-.nav-links a::after\{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--red);transition:width 0.3s;\}\
-.nav-links a:hover\{color:var(--bright);\}\
-.nav-links a:hover::after\{width:100%;\}\
-.nav-status\{display:flex;align-items:center;gap:8px;font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--green);\}\
-.status-dot\{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;\}\
-@keyframes pulse\{0%,100%\{opacity:1;box-shadow:0 0 0 0 rgba(0,255,136,0.4)\}50%\{opacity:0.6;box-shadow:0 0 0 6px rgba(0,255,136,0)\}\}\
-\
-/* HERO */\
-#hero\{\
-  min-height:100vh;display:flex;align-items:center;\
-  position:relative;overflow:hidden;\
-  background:radial-gradient(ellipse at 20% 50%,rgba(230,57,70,0.08) 0%,transparent 50%),\
-             radial-gradient(ellipse at 80% 20%,rgba(0,212,255,0.05) 0%,transparent 50%),\
-             var(--darker);\
-  padding-top:60px;\
-\}\
-.hero-grid\{position:absolute;inset:0;background-image:linear-gradient(rgba(26,42,74,0.3) 1px,transparent 1px),linear-gradient(90deg,rgba(26,42,74,0.3) 1px,transparent 1px);background-size:60px 60px;animation:gridMove 20s linear infinite;\}\
-@keyframes gridMove\{0%\{transform:translateY(0)\}100%\{transform:translateY(60px)\}\}\
-.hero-scanline\{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.03) 2px,rgba(0,0,0,0.03) 4px);\}\
-.car-silhouette\{position:absolute;right:-5%;bottom:8%;width:62%;opacity:0.07;filter:drop-shadow(0 0 40px rgba(230,57,70,0.3));\}\
-\
-.hero-inner\{position:relative;z-index:10;display:flex;align-items:center;justify-content:space-between;width:100%;padding:0 60px;\}\
-.hero-content\{max-width:620px;\}\
-.hero-tag\{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--red);letter-spacing:4px;margin-bottom:10px;display:flex;align-items:center;gap:10px;\}\
-.hero-tag::before\{content:'';display:inline-block;width:24px;height:1px;background:var(--red);\}\
-.hero-name\{font-family:'Orbitron',monospace;font-size:clamp(34px,5.5vw,72px);font-weight:900;line-height:0.95;color:var(--bright);text-shadow:0 0 60px rgba(230,57,70,0.3);animation:fadeSlideUp 0.8s ease forwards;\}\
-.hero-name span\{color:var(--red);\}\
-.hero-role\{font-size:clamp(14px,2vw,19px);font-weight:300;color:var(--accent);letter-spacing:3px;margin-top:10px;font-family:'Rajdhani',sans-serif;animation:fadeSlideUp 0.8s 0.2s ease forwards;opacity:0;\}\
-.hero-desc\{max-width:520px;margin-top:14px;font-size:14px;line-height:1.7;color:var(--dim);font-weight:300;animation:fadeSlideUp 0.8s 0.4s ease forwards;opacity:0;\}\
-@keyframes fadeSlideUp\{from\{opacity:0;transform:translateY(30px)\}to\{opacity:1;transform:translateY(0)\}\}\
-\
-.hero-stats\{display:flex;gap:32px;margin-top:24px;animation:fadeSlideUp 0.8s 0.6s ease forwards;opacity:0;\}\
-.stat-item\{text-align:left;\}\
-.stat-num\{font-family:'Orbitron',monospace;font-size:24px;font-weight:700;color:var(--bright);\}\
-.stat-num span\{color:var(--red);\}\
-.stat-label\{font-size:10px;letter-spacing:2px;color:var(--dim);text-transform:uppercase;margin-top:2px;\}\
-\
-.hero-cta\{display:flex;gap:14px;margin-top:24px;animation:fadeSlideUp 0.8s 0.8s ease forwards;opacity:0;\}\
-.btn-primary\{font-family:'Orbitron',monospace;font-size:11px;font-weight:700;letter-spacing:2px;padding:12px 28px;background:var(--red);color:white;border:none;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);cursor:pointer;transition:all 0.3s;text-transform:uppercase;\}\
-.btn-primary:hover\{background:#ff2d3b;box-shadow:0 0 30px rgba(230,57,70,0.6);transform:translateY(-2px);\}\
-.btn-outline\{font-family:'Orbitron',monospace;font-size:11px;font-weight:700;letter-spacing:2px;padding:12px 28px;background:transparent;color:var(--accent);border:1px solid var(--accent);cursor:pointer;transition:all 0.3s;text-transform:uppercase;\}\
-.btn-outline:hover\{background:rgba(0,212,255,0.1);box-shadow:0 0 20px rgba(0,212,255,0.3);\}\
-\
-.speed-meter\{width:150px;height:150px;flex-shrink:0;animation:fadeSlideUp 0.8s 1s ease forwards;opacity:0;\}\
-.speed-meter svg\{width:100%;height:100%;\}\
-\
-/* SECTIONS */\
-section\{padding:56px 60px;position:relative;\}\
-.section-label\{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--red);letter-spacing:4px;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:10px;\}\
-.section-label::before\{content:'';display:inline-block;width:18px;height:1px;background:var(--red);\}\
-.section-title\{font-family:'Orbitron',monospace;font-size:clamp(22px,3.5vw,38px);font-weight:700;color:var(--bright);margin-bottom:0;line-height:1.1;\}\
-.section-title span\{color:var(--red);\}\
-\
-/* ABOUT */\
-#about\{background:linear-gradient(135deg,var(--darker) 0%,var(--panel) 100%);\}\
-.about-grid\{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-top:32px;\}\
-.about-card\{background:var(--panel);border:1px solid var(--border);padding:24px;position:relative;overflow:hidden;\}\
-.about-card::before\{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--red),transparent);\}\
-.about-card-header\{font-family:'Orbitron',monospace;font-size:10px;color:var(--red);letter-spacing:3px;margin-bottom:14px;\}\
-.info-row\{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(26,42,74,0.5);font-size:12px;\}\
-.info-row:last-child\{border-bottom:none;\}\
-.info-key\{color:var(--dim);letter-spacing:1px;font-size:11px;text-transform:uppercase;\}\
-.info-val\{color:var(--bright);font-weight:500;\}\
-.info-val.accent\{color:var(--accent);\}\
-.info-val.red\{color:var(--red);\}\
-.about-text p\{font-size:14px;line-height:1.75;color:var(--text);margin-bottom:12px;font-weight:300;\}\
-.about-text p strong\{color:var(--accent);\}\
-.about-text p:last-child\{margin-bottom:0;\}\
-\
-/* SKILLS */\
-#skills\{background:var(--darker);\}\
-.skills-grid\{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px;\}\
-.skill-category\{background:var(--panel);border:1px solid var(--border);padding:22px;position:relative;overflow:hidden;transition:border-color 0.3s,transform 0.3s;\}\
-.skill-category:hover\{border-color:var(--red);transform:translateY(-3px);\}\
-.skill-category::after\{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--red),transparent);transform:scaleX(0);transition:transform 0.3s;\}\
-.skill-category:hover::after\{transform:scaleX(1);\}\
-.skill-cat-title\{font-family:'Orbitron',monospace;font-size:11px;color:var(--accent);letter-spacing:2px;margin-bottom:14px;font-weight:700;\}\
-.skill-tags\{display:flex;flex-wrap:wrap;gap:6px;\}\
-.skill-tag\{font-family:'Share Tech Mono',monospace;font-size:10px;padding:4px 10px;border:1px solid var(--border);color:var(--text);transition:all 0.2s;cursor:default;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);background:rgba(0,0,0,0.3);\}\
-.skill-tag:hover\{border-color:var(--red);color:var(--red);background:rgba(230,57,70,0.1);\}\
-\
-/* EXPERIENCE */\
-#experience\{background:linear-gradient(135deg,var(--panel) 0%,var(--darker) 100%);\}\
-.timeline\{margin-top:32px;position:relative;\}\
-.timeline::before\{content:'';position:absolute;left:22px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,var(--red),var(--border),transparent);\}\
-.timeline-item\{padding-left:58px;margin-bottom:36px;position:relative;\}\
-.timeline-item:last-child\{margin-bottom:0;\}\
-.timeline-dot\{position:absolute;left:14px;top:6px;width:16px;height:16px;border:2px solid var(--red);background:var(--darker);transform:rotate(45deg);box-shadow:0 0 10px rgba(230,57,70,0.5);\}\
-.timeline-meta\{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--dim);letter-spacing:2px;margin-bottom:5px;\}\
-.timeline-role\{font-family:'Orbitron',monospace;font-size:14px;font-weight:700;color:var(--bright);margin-bottom:2px;\}\
-.timeline-company\{font-size:13px;color:var(--red);font-weight:600;letter-spacing:1px;margin-bottom:12px;\}\
-.timeline-points\{list-style:none;padding:0;\}\
-.timeline-points li\{font-size:13px;color:var(--text);line-height:1.65;padding:4px 0 4px 18px;position:relative;font-weight:300;\}\
-.timeline-points li::before\{content:'
-\f1 \uc0\u9656 
-\f0 ';position:absolute;left:0;color:var(--red);font-size:11px;\}\
-.badge\{display:inline-block;font-family:'Share Tech Mono',monospace;font-size:9px;padding:2px 8px;border:1px solid var(--green);color:var(--green);letter-spacing:1px;margin-left:8px;vertical-align:middle;\}\
-\
-/* PROJECTS */\
-#projects\{background:var(--darker);\}\
-.projects-grid\{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px;\}\
-.project-card\{background:var(--panel);border:1px solid var(--border);padding:24px;position:relative;overflow:hidden;transition:all 0.3s;cursor:pointer;\}\
-.project-card::before\{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(230,57,70,0.04),transparent);transition:left 0.6s;\}\
-.project-card:hover::before\{left:100%;\}\
-.project-card:hover\{border-color:rgba(230,57,70,0.4);transform:translateY(-3px);box-shadow:0 16px 32px rgba(0,0,0,0.4);\}\
-.project-num\{font-family:'Orbitron',monospace;font-size:32px;font-weight:900;color:rgba(230,57,70,0.1);position:absolute;right:16px;top:14px;line-height:1;\}\
-.project-tag\{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--accent);letter-spacing:2px;margin-bottom:8px;text-transform:uppercase;\}\
-.project-title\{font-family:'Orbitron',monospace;font-size:13px;font-weight:700;color:var(--bright);margin-bottom:10px;line-height:1.4;\}\
-.project-desc\{font-size:12px;color:var(--dim);line-height:1.65;font-weight:300;\}\
-.project-metric\{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;\}\
-.metric-chip\{font-family:'Share Tech Mono',monospace;font-size:9px;padding:3px 9px;background:rgba(230,57,70,0.1);border:1px solid rgba(230,57,70,0.3);color:var(--red);\}\
-\
-/* CERTS */\
-#certs\{background:linear-gradient(135deg,var(--darker) 0%,var(--panel) 100%);\}\
-.patent-banner\{background:var(--panel);border:1px solid rgba(255,215,0,0.3);padding:20px 26px;margin-top:28px;display:flex;align-items:center;gap:20px;position:relative;overflow:hidden;\}\
-.patent-banner::before\{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--yellow);\}\
-.patent-icon-wrap\{width:44px;height:44px;border:1px solid var(--yellow);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;\}\
-.patent-label\{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--yellow);letter-spacing:2px;margin-bottom:4px;\}\
-.patent-title\{font-size:14px;font-weight:600;color:var(--bright);margin-bottom:3px;\}\
-.patent-num\{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--dim);\}\
-.certs-scroll\{display:flex;gap:12px;margin-top:20px;overflow-x:auto;padding-bottom:8px;scrollbar-width:thin;scrollbar-color:var(--red) var(--panel);\}\
-.cert-card\{flex:0 0 200px;background:var(--panel);border:1px solid var(--border);padding:16px;transition:all 0.3s;\}\
-.cert-card:hover\{border-color:var(--red);transform:translateY(-3px);\}\
-.cert-icon\{font-size:20px;margin-bottom:8px;\}\
-.cert-name\{font-size:12px;color:var(--bright);font-weight:600;line-height:1.35;margin-bottom:4px;\}\
-.cert-issuer\{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--dim);letter-spacing:1px;\}\
-\
-/* CONTACT */\
-#contact\{background:var(--darker);text-align:center;background-image:radial-gradient(ellipse at 50% 50%,rgba(230,57,70,0.06) 0%,transparent 60%);\}\
-.contact-tagline\{font-size:14px;color:var(--dim);margin-top:12px;margin-bottom:32px;font-weight:300;max-width:440px;margin-left:auto;margin-right:auto;\}\
-.contact-links\{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;\}\
-.contact-link\{display:flex;align-items:center;gap:8px;font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--text);text-decoration:none;padding:12px 20px;border:1px solid var(--border);transition:all 0.3s;\}\
-.contact-link:hover\{border-color:var(--red);color:var(--red);box-shadow:0 0 16px rgba(230,57,70,0.2);\}\
-\
-footer\{padding:18px 60px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;\}\
-.footer-brand\{font-family:'Orbitron',monospace;font-size:11px;color:var(--red);letter-spacing:3px;\}\
-.footer-copy\{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--dim);\}\
-\
-.reveal\{opacity:0;transform:translateY(30px);transition:opacity 0.6s,transform 0.6s;\}\
-.reveal.visible\{opacity:1;transform:translateY(0);\}\
-\
-#particles\{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;\}\
-.particle\{position:absolute;width:1px;height:1px;background:var(--red);opacity:0;animation:particleFloat linear infinite;\}\
-@keyframes particleFloat\{0%\{opacity:0;transform:translateY(100vh)\}10%\{opacity:0.4\}90%\{opacity:0.4\}100%\{opacity:0;transform:translateY(-20px) translateX(30px)\}\}\
-\
-@media(max-width:768px)\{\
-  nav\{padding:10px 18px;\}\
-  section\{padding:40px 20px;\}\
-  .hero-inner\{flex-direction:column;padding:0 20px;gap:24px;\}\
-  .about-grid,.skills-grid,.projects-grid\{grid-template-columns:1fr;\}\
-  .hero-stats\{gap:18px;flex-wrap:wrap;\}\
-  .speed-meter\{display:none;\}\
-  footer\{flex-direction:column;gap:8px;text-align:center;padding:14px 20px;\}\
-\}\
-</style>\
-</head>\
-<body>\
-\
-<div id="cursor"></div>\
-<div id="cursor-dot"></div>\
-<div id="particles"></div>\
-<div class="hud-corner hud-tl"></div>\
-<div class="hud-corner hud-tr"></div>\
-<div class="hud-corner hud-bl"></div>\
-<div class="hud-corner hud-br"></div>\
-\
-<nav>\
-  <div class="nav-logo">BR/K</div>\
-  <div class="nav-links">\
-    <a href="#about">ABOUT</a>\
-    <a href="#skills">SKILLS</a>\
-    <a href="#experience">EXP</a>\
-    <a href="#projects">PROJECTS</a>\
-    <a href="#contact">CONTACT</a>\
-  </div>\
-  <div class="nav-status"><div class="status-dot"></div>SYSTEM ONLINE</div>\
-</nav>\
-\
-<!-- HERO -->\
-<section id="hero">\
-  <div class="hero-grid"></div>\
-  <div class="hero-scanline"></div>\
-  <svg class="car-silhouette" viewBox="0 0 800 300" fill="none" xmlns="http://www.w3.org/2000/svg">\
-    <path d="M50 200 C100 200 120 160 160 140 C200 120 280 110 340 108 L380 80 C420 60 500 55 560 60 L620 70 C680 78 720 100 740 120 L760 150 L780 180 L760 200 Z" fill="#e63946" opacity="0.6"/>\
-    <circle cx="180" cy="210" r="40" fill="#0a0f1e" stroke="#e63946" stroke-width="2"/>\
-    <circle cx="180" cy="210" r="25" fill="#050810" stroke="#e63946" stroke-width="1"/>\
-    <circle cx="620" cy="210" r="40" fill="#0a0f1e" stroke="#e63946" stroke-width="2"/>\
-    <circle cx="620" cy="210" r="25" fill="#050810" stroke="#e63946" stroke-width="1"/>\
-    <path d="M350 108 L390 75 L540 60 L580 70 L600 100 Z" fill="#e63946" opacity="0.4"/>\
-    <line x1="50" y1="195" x2="760" y2="195" stroke="#e63946" stroke-width="1" opacity="0.3"/>\
-  </svg>\
-\
-  <div class="hero-inner">\
-    <div class="hero-content">\
-      <div class="hero-tag">ENGINEER / INNOVATOR / BUILDER</div>\
-      <div class="hero-name">BENSON<br><span>RANJITH K</span></div>\
-      <div class="hero-role">AI/ML ENGINEER \'b7 AUTOMOTIVE TECH</div>\
-      <div class="hero-desc">Software Engineer bridging AI systems and embedded development. Building intelligent, high-performance systems that translate complex technical challenges into measurable outcomes \'97 from automotive crack detection to predictive maintenance.</div>\
-      <div class="hero-stats">\
-        <div class="stat-item"><div class="stat-num">8.18<span>+</span></div><div class="stat-label">CGPA / VIT</div></div>\
-        <div class="stat-item"><div class="stat-num">92<span>%</span></div><div class="stat-label">Crack Detection</div></div>\
-        <div class="stat-item"><div class="stat-num">16<span>K</span></div><div class="stat-label">LinkedIn Followers</div></div>\
-        <div class="stat-item"><div class="stat-num">01</div><div class="stat-label">Filed Patent</div></div>\
-      </div>\
-      <div class="hero-cta">\
-        <button class="btn-primary" onclick="document.getElementById('projects').scrollIntoView(\{behavior:'smooth'\})">VIEW PROJECTS</button>\
-        <button class="btn-outline" onclick="document.getElementById('contact').scrollIntoView(\{behavior:'smooth'\})">CONNECT</button>\
-      </div>\
-    </div>\
-    <div class="speed-meter">\
-      <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">\
-        <circle cx="80" cy="80" r="70" fill="none" stroke="rgba(26,42,74,0.8)" stroke-width="1"/>\
-        <circle cx="80" cy="80" r="60" fill="none" stroke="rgba(26,42,74,0.5)" stroke-width="0.5" stroke-dasharray="4 4"/>\
-        <path d="M 25 115 A 60 60 0 1 1 135 115" fill="none" stroke="rgba(26,42,74,0.6)" stroke-width="6" stroke-linecap="round"/>\
-        <path id="speedArc" d="M 25 115 A 60 60 0 1 1 135 115" fill="none" stroke="#e63946" stroke-width="6" stroke-linecap="round" stroke-dasharray="0 300" style="filter:drop-shadow(0 0 6px #e63946)"/>\
-        <text x="80" y="90" text-anchor="middle" fill="#fff" font-family="Orbitron,monospace" font-size="18" font-weight="900" id="speedNum">0</text>\
-        <text x="80" y="106" text-anchor="middle" fill="rgba(200,214,240,0.5)" font-family="Rajdhani,sans-serif" font-size="10" letter-spacing="2">km/h</text>\
-        <text x="80" y="124" text-anchor="middle" fill="#e63946" font-family="Share Tech Mono,monospace" font-size="8" letter-spacing="1">PERFORMANCE</text>\
-        <line x1="80" y1="80" x2="80" y2="30" stroke="#e63946" stroke-width="1.5" stroke-linecap="round" id="speedNeedle" style="transform-origin:80px 80px;transform:rotate(-135deg);transition:transform 0.05s"/>\
-      </svg>\
-    </div>\
-  </div>\
-</section>\
-\
-<!-- ABOUT -->\
-<section id="about">\
-  <div class="section-label">SYSTEM PROFILE</div>\
-  <h2 class="section-title">ABOUT <span>ME</span></h2>\
-  <div class="about-grid reveal">\
-    <div class="about-card">\
-      <div class="about-card-header">// IDENTITY_MODULE.exe</div>\
-      <div class="info-row"><span class="info-key">Name</span><span class="info-val">Benson Ranjith K</span></div>\
-      <div class="info-row"><span class="info-key">Degree</span><span class="info-val accent">MTech Integrated \'97 Soft. Eng.</span></div>\
-      <div class="info-row"><span class="info-key">Institute</span><span class="info-val">VIT, Vellore</span></div>\
-      <div class="info-row"><span class="info-key">Graduation</span><span class="info-val">2026</span></div>\
-      <div class="info-row"><span class="info-key">Email</span><span class="info-val red">contact.bensonranjith@gmail.com</span></div>\
-      <div class="info-row"><span class="info-key">Phone</span><span class="info-val accent">+91 9626190909</span></div>\
-      <div class="info-row"><span class="info-key">Languages</span><span class="info-val">English \'b7 Tamil \'b7 German</span></div>\
-      <div class="info-row"><span class="info-key">Status</span><span class="info-val red">R&D Intern @ Nokia 
-\f1 \uc0\u9656 
-\f0  Live</span></div>\
-    </div>\
-    <div class="about-text">\
-      <p>A <strong>Software Engineer</strong> with deep expertise in AI/ML systems and embedded development, with hands-on experience across the full Agile/SCRUM delivery cycle.</p>\
-      <p>A natural problem-solver bridging research and real-world engineering \'97 focused on building <strong>intelligent, high-performance systems</strong> that streamline workflows.</p>\
-      <p>Passionate about <strong>automotive technology</strong>, from surface crack detection to DDoS protection in vehicle networks and AI-driven predictive maintenance.</p>\
-      <p>Currently pushing boundaries at <strong>Nokia, Bangalore</strong> \'97 automating network performance testing and integrating CI/CD pipelines for faster releases.</p>\
-    </div>\
-  </div>\
-</section>\
-\
-<!-- SKILLS -->\
-<section id="skills">\
-  <div class="section-label">CAPABILITY INDEX</div>\
-  <h2 class="section-title">TECH <span>STACK</span></h2>\
-  <div class="skills-grid reveal">\
-    <div class="skill-category">\
-      <div class="skill-cat-title">
-\f2 \uc0\u9889 
-\f0  PROGRAMMING LANGUAGES</div>\
-      <div class="skill-tags">\
-        <span class="skill-tag">Java</span><span class="skill-tag">Python</span><span class="skill-tag">C/C++</span><span class="skill-tag">JavaScript</span><span class="skill-tag">MATLAB</span>\
-      </div>\
-    </div>\
-    <div class="skill-category">\
-      <div class="skill-cat-title">
-\f2 \uc0\u55358 \u56800 
-\f0  AI / ML FRAMEWORKS</div>\
-      <div class="skill-tags">\
-        <span class="skill-tag">TensorFlow</span><span class="skill-tag">PyTorch</span><span class="skill-tag">OpenCV</span><span class="skill-tag">scikit-learn</span><span class="skill-tag">LangChain</span><span class="skill-tag">LSTM</span>\
-      </div>\
-    </div>\
-    <div class="skill-category">\
-      <div class="skill-cat-title">
-\f2 \uc0\u55356 \u57104 
-\f0  WEB & BACKEND</div>\
-      <div class="skill-tags">\
-        <span class="skill-tag">React.js</span><span class="skill-tag">Node.js</span><span class="skill-tag">Django</span><span class="skill-tag">Spring Boot</span><span class="skill-tag">Express.js</span><span class="skill-tag">REST APIs</span>\
-      </div>\
-    </div>\
-    <div class="skill-category">\
-      <div class="skill-cat-title">
-\f2 \uc0\u55357 \u56615 
-\f0  TOOLS & DEVOPS</div>\
-      <div class="skill-tags">\
-        <span class="skill-tag">Git</span><span class="skill-tag">Jenkins</span><span class="skill-tag">AWS IoT</span><span class="skill-tag">Power BI</span><span class="skill-tag">JIRA</span><span class="skill-tag">MongoDB</span><span class="skill-tag">MySQL</span><span class="skill-tag">Figma</span>\
-      </div>\
-    </div>\
-  </div>\
-</section>\
-\
-<!-- EXPERIENCE -->\
-<section id="experience">\
-  <div class="section-label">MISSION LOG</div>\
-  <h2 class="section-title">EXPERIENCE <span>RECORD</span></h2>\
-  <div class="timeline reveal">\
-    <div class="timeline-item">\
-      <div class="timeline-dot"></div>\
-      <div class="timeline-meta">AUG 2025 \'97 JUN 2026 \'b7 BANGALORE, ON-SITE</div>\
-      <div class="timeline-role">R&D INTERN <span class="badge">CURRENT</span></div>\
-      <div class="timeline-company">NOKIA</div>\
-      <ul class="timeline-points">\
-        <li>Developed automated network performance test suites using Python \'97 reduced manual testing effort by <strong style="color:#e63946">12%</strong> and improved test coverage.</li>\
-        <li>Simulated high-traffic scenarios to evaluate scalability and validate network performance under multiple load conditions.</li>\
-        <li>Integrated performance testing into CI/CD pipelines (Jenkins) \'97 decreased validation time by <strong style="color:#e63946">30%</strong>.</li>\
-      </ul>\
-    </div>\
-    <div class="timeline-item">\
-      <div class="timeline-dot"></div>\
-      <div class="timeline-meta">MAY 2023 \'97 JUN 2023 \'b7 TUTICORIN, ON-SITE</div>\
-      <div class="timeline-role">SOFTWARE DEVELOPMENT INTERN</div>\
-      <div class="timeline-company">VOC PORT AUTHORITY</div>\
-      <ul class="timeline-points">\
-        <li>Built a vessel monitoring application enabling real-time tracking \'97 improved operational efficiency by <strong style="color:#e63946">30%</strong>.</li>\
-        <li>Deployed an ML model to predict vessel demands \'97 reduced idle time by <strong style="color:#e63946">25%</strong> and optimized resource allocation.</li>\
-        <li>Optimized database via restructured queries and indexing \'97 achieved <strong style="color:#e63946">15%</strong> faster response times.</li>\
-      </ul>\
-    </div>\
-  </div>\
-</section>\
-\
-<!-- PROJECTS -->\
-<section id="projects">\
-  <div class="section-label">BUILD LOG</div>\
-  <h2 class="section-title">KEY <span>PROJECTS</span></h2>\
-  <div class="projects-grid reveal">\
-    <div class="project-card">\
-      <div class="project-num">01</div>\
-      <div class="project-tag">AUTOMOTIVE \'b7 COMPUTER VISION</div>\
-      <div class="project-title">Surface Crack Detection in Automotive Components</div>\
-      <div class="project-desc">Ensemble learning model combining CNN, Random Forest, KNN and XGBoost to improve crack detection accuracy. Implemented data augmentation to reduce false positives on diverse automotive surfaces.</div>\
-      <div class="project-metric"><span class="metric-chip">92% Detection Rate</span><span class="metric-chip">-25% False Positives</span></div>\
-    </div>\
-    <div class="project-card">\
-      <div class="project-num">02</div>\
-      <div class="project-tag">AUTOMOTIVE \'b7 PREDICTIVE AI</div>\
-      <div class="project-title">AI-Driven Predictive Maintenance in Automotive Manufacturing</div>\
-      <div class="project-desc">AI-based predictive maintenance using Random Forest and LSTM models to detect early equipment failure. Continuous monitoring via AWS IoT and REST APIs.</div>\
-      <div class="project-metric"><span class="metric-chip">-30% Downtime</span><span class="metric-chip">+20% Efficiency</span></div>\
-    </div>\
-    <div class="project-card">\
-      <div class="project-num">03</div>\
-      <div class="project-tag">AUTOMOTIVE \'b7 CYBERSECURITY</div>\
-      <div class="project-title">AI-based DDoS Detection for SDN in Automotive Networks</div>\
-      <div class="project-desc">AI-based system for detecting DDoS attacks in software-defined automotive networks, ensuring secure and reliable vehicle communications.</div>\
-      <div class="project-metric"><span class="metric-chip">SDN Security</span><span class="metric-chip">V2X Protection</span></div>\
-    </div>\
-    <div class="project-card">\
-      <div class="project-num">04</div>\
-      <div class="project-tag">NLP \'b7 LLM</div>\
-      <div class="project-title">Conversational PDF Assistant (German Language)</div>\
-      <div class="project-desc">Built using LangChain and LLMs, enabling natural language interaction with German-language PDF documents for efficient information retrieval and summarization.</div>\
-      <div class="project-metric"><span class="metric-chip">LangChain</span><span class="metric-chip">Multilingual NLP</span></div>\
-    </div>\
-  </div>\
-</section>\
-\
-<!-- CERTS & PATENT -->\
-<section id="certs">\
-  <div class="section-label">CREDENTIALS</div>\
-  <h2 class="section-title">CERTS & <span>PATENT</span></h2>\
-  <div class="patent-banner reveal">\
-    <div class="patent-icon-wrap">
-\f2 \uc0\u55356 \u57285 
-\f0 </div>\
-    <div>\
-      <div class="patent-label">// FILED PATENT</div>\
-      <div class="patent-title">GPS-Enabled Collar with Activity Monitoring</div>\
-      <div class="patent-num">APP NO: 438828-001 \'b7 PUBLISHED: 27 JAN 2025 \'b7 INDIAN PATENT OFFICE</div>\
-    </div>\
-  </div>\
-  <div class="certs-scroll reveal">\
-    <div class="cert-card"><div class="cert-icon">
-\f2 \uc0\u55358 \u56598 
-\f0 </div><div class="cert-name">Machine Learning Specialization</div><div class="cert-issuer">STANFORD \'b7 COURSERA</div></div>\
-    <div class="cert-card"><div class="cert-icon">
-\f2 \uc0\u55357 \u56983 
-\f0 </div><div class="cert-name">Advanced Driver Assistance Systems (ADAS)</div><div class="cert-issuer">UDEMY</div></div>\
-    <div class="cert-card"><div class="cert-icon">
-\f2 \uc0\u55356 \u57294 \u65039 
-\f0 </div><div class="cert-name">Intro to Automotive Embedded Systems</div><div class="cert-issuer">COURSERA</div></div>\
-    <div class="cert-card"><div class="cert-icon">
-\f2 \uc0\u9729 \u65039 
-\f0 </div><div class="cert-name">Attention Mechanism</div><div class="cert-issuer">GOOGLE CLOUD \'b7 COURSERA</div></div>\
-    <div class="cert-card"><div class="cert-icon">
-\f2 \uc0\u55357 \u56522 
-\f0 </div><div class="cert-name">Google Project Management Professional</div><div class="cert-issuer">GOOGLE \'b7 COURSERA</div></div>\
-    <div class="cert-card"><div class="cert-icon">
-\f2 \uc0\u55356 \u57104 
-\f0 </div><div class="cert-name">Industrial Internet of Things (IIoT)</div><div class="cert-issuer">UNIV OF MICHIGAN</div></div>\
-    <div class="cert-card"><div class="cert-icon">
-\f2 \uc0\u55357 \u56631 
-\f0 </div><div class="cert-name">Oracle Autonomous Database Professional</div><div class="cert-issuer">ORACLE</div></div>\
-    <div class="cert-card"><div class="cert-icon">
-\f2 \uc0\u9881 \u65039 
-\f0 </div><div class="cert-name">Automation Anywhere Certified RPA Pro</div><div class="cert-issuer">AUTOMATION ANYWHERE</div></div>\
-  </div>\
-</section>\
-\
-<!-- CONTACT -->\
-<section id="contact">\
-  <div class="section-label" style="justify-content:center">INITIATE CONTACT</div>\
-  <h2 class="section-title" style="text-align:center">LET'S <span>CONNECT</span></h2>\
-  <p class="contact-tagline">Open to opportunities, collaborations, and conversations. Let's build something extraordinary.</p>\
-  <div class="contact-links reveal">\
-    <a href="mailto:contact.bensonranjith@gmail.com" class="contact-link"><span>
-\f3 \uc0\u9993 
-\f0 </span>contact.bensonranjith@gmail.com</a>\
-    <a href="https://linkedin.com" class="contact-link"><span>in</span>LinkedIn \'b7 16K+ Followers</a>\
-    <a href="https://github.com" class="contact-link"><span>
-\f1 \uc0\u8997 
-\f0 </span>GitHub Profile</a>\
-    <a href="tel:+919626190909" class="contact-link"><span>
-\f2 \uc0\u55357 \u56542 
-\f0 </span>+91 9626190909</a>\
-  </div>\
-</section>\
-\
-<footer>\
-  <div class="footer-brand">BENSON RANJITH K</div>\
-  <div class="footer-copy">\'a9 2026 \'b7 BUILT WITH PRECISION \'b7 VIT VELLORE</div>\
-</footer>\
-\
-<script>\
-  // Custom cursor\
-  const cursor = document.getElementById('cursor');\
-  const dot = document.getElementById('cursor-dot');\
-  document.addEventListener('mousemove', e => \{\
-    cursor.style.left = e.clientX + 'px';\
-    cursor.style.top = e.clientY + 'px';\
-    dot.style.left = e.clientX + 'px';\
-    dot.style.top = e.clientY + 'px';\
-  \});\
-\
-  // Floating particles\
-  const pContainer = document.getElementById('particles');\
-  for (let i = 0; i < 20; i++) \{\
-    const p = document.createElement('div');\
-    p.className = 'particle';\
-    p.style.cssText = `left:$\{Math.random() * 100\}%;animation-duration:$\{6 + Math.random() * 12\}s;animation-delay:$\{Math.random() * 10\}s;`;\
-    pContainer.appendChild(p);\
-  \}\
-\
-  // Speed meter\
-  const arc = document.getElementById('speedArc');\
-  const needle = document.getElementById('speedNeedle');\
-  const numEl = document.getElementById('speedNum');\
-  const totalDash = 314;\
-  let speed = 0, target = 0, dir = 1;\
-  setInterval(() => \{\
-    target += dir * (8 + Math.random() * 15);\
-    if (target > 240) dir = -1;\
-    if (target < 20) dir = 1;\
-  \}, 800);\
-  function animSpeed() \{\
-    speed += (target - speed) * 0.04;\
-    const pct = Math.min(speed / 260, 1);\
-    arc.style.strokeDasharray = `$\{pct * totalDash\} $\{totalDash\}`;\
-    needle.style.transform = `rotate($\{-135 + (pct * 270)\}deg)`;\
-    numEl.textContent = Math.round(speed);\
-    requestAnimationFrame(animSpeed);\
-  \}\
-  animSpeed();\
-\
-  // Scroll reveal\
-  const obs = new IntersectionObserver(entries => \{\
-    entries.forEach(e => \{ if (e.isIntersecting) e.target.classList.add('visible'); \});\
-  \}, \{ threshold: 0.08 \});\
-  document.querySelectorAll('.reveal').forEach(r => obs.observe(r));\
-</script>\
-</body>\
-</html>}
+.hud-corner{position:fixed;width:50px;height:50px;pointer-events:none;z-index:100;}
+.hud-tl{top:10px;left:10px;border-top:1px solid var(--red);border-left:1px solid var(--red);}
+.hud-tr{top:10px;right:10px;border-top:1px solid var(--red);border-right:1px solid var(--red);}
+.hud-bl{bottom:10px;left:10px;border-bottom:1px solid var(--red);border-left:1px solid var(--red);}
+.hud-br{bottom:10px;right:10px;border-bottom:1px solid var(--red);border-right:1px solid var(--red);}
+
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 40px;
+  background:linear-gradient(180deg,rgba(2,5,8,0.97) 0%,transparent 100%);
+  backdrop-filter:blur(4px);
+}
+.nav-logo{font-family:'Orbitron',monospace;font-size:14px;font-weight:900;color:var(--red);letter-spacing:4px;text-shadow:0 0 20px rgba(230,57,70,0.8);}
+.nav-links{display:flex;gap:28px;}
+.nav-links a{font-family:'Rajdhani',sans-serif;font-size:12px;font-weight:600;color:var(--dim);text-decoration:none;letter-spacing:2px;text-transform:uppercase;transition:color 0.3s;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--red);transition:width 0.3s;}
+.nav-links a:hover{color:var(--bright);}
+.nav-links a:hover::after{width:100%;}
+.nav-status{display:flex;align-items:center;gap:8px;font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--green);}
+.status-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,255,136,0.4)}50%{opacity:0.6;box-shadow:0 0 0 6px rgba(0,255,136,0)}}
+
+/* HERO */
+#hero{
+  min-height:100vh;display:flex;align-items:center;
+  position:relative;overflow:hidden;
+  background:radial-gradient(ellipse at 20% 50%,rgba(230,57,70,0.08) 0%,transparent 50%),
+             radial-gradient(ellipse at 80% 20%,rgba(0,212,255,0.05) 0%,transparent 50%),
+             var(--darker);
+  padding-top:60px;
+}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(26,42,74,0.3) 1px,transparent 1px),linear-gradient(90deg,rgba(26,42,74,0.3) 1px,transparent 1px);background-size:60px 60px;animation:gridMove 20s linear infinite;}
+@keyframes gridMove{0%{transform:translateY(0)}100%{transform:translateY(60px)}}
+.hero-scanline{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.03) 2px,rgba(0,0,0,0.03) 4px);}
+.car-silhouette{position:absolute;right:-5%;bottom:8%;width:62%;opacity:0.07;filter:drop-shadow(0 0 40px rgba(230,57,70,0.3));}
+
+.hero-inner{position:relative;z-index:10;display:flex;align-items:center;justify-content:space-between;width:100%;padding:0 60px;}
+.hero-content{max-width:620px;}
+.hero-tag{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--red);letter-spacing:4px;margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+.hero-tag::before{content:'';display:inline-block;width:24px;height:1px;background:var(--red);}
+.hero-name{font-family:'Orbitron',monospace;font-size:clamp(34px,5.5vw,72px);font-weight:900;line-height:0.95;color:var(--bright);text-shadow:0 0 60px rgba(230,57,70,0.3);animation:fadeSlideUp 0.8s ease forwards;}
+.hero-name span{color:var(--red);}
+.hero-role{font-size:clamp(14px,2vw,19px);font-weight:300;color:var(--accent);letter-spacing:3px;margin-top:10px;font-family:'Rajdhani',sans-serif;animation:fadeSlideUp 0.8s 0.2s ease forwards;opacity:0;}
+.hero-desc{max-width:520px;margin-top:14px;font-size:14px;line-height:1.7;color:var(--dim);font-weight:300;animation:fadeSlideUp 0.8s 0.4s ease forwards;opacity:0;}
+@keyframes fadeSlideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+.hero-stats{display:flex;gap:32px;margin-top:24px;animation:fadeSlideUp 0.8s 0.6s ease forwards;opacity:0;}
+.stat-item{text-align:left;}
+.stat-num{font-family:'Orbitron',monospace;font-size:24px;font-weight:700;color:var(--bright);}
+.stat-num span{color:var(--red);}
+.stat-label{font-size:10px;letter-spacing:2px;color:var(--dim);text-transform:uppercase;margin-top:2px;}
+
+.hero-cta{display:flex;gap:14px;margin-top:24px;animation:fadeSlideUp 0.8s 0.8s ease forwards;opacity:0;}
+.btn-primary{font-family:'Orbitron',monospace;font-size:11px;font-weight:700;letter-spacing:2px;padding:12px 28px;background:var(--red);color:white;border:none;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);cursor:pointer;transition:all 0.3s;text-transform:uppercase;}
+.btn-primary:hover{background:#ff2d3b;box-shadow:0 0 30px rgba(230,57,70,0.6);transform:translateY(-2px);}
+.btn-outline{font-family:'Orbitron',monospace;font-size:11px;font-weight:700;letter-spacing:2px;padding:12px 28px;background:transparent;color:var(--accent);border:1px solid var(--accent);cursor:pointer;transition:all 0.3s;text-transform:uppercase;}
+.btn-outline:hover{background:rgba(0,212,255,0.1);box-shadow:0 0 20px rgba(0,212,255,0.3);}
+
+.speed-meter{width:150px;height:150px;flex-shrink:0;animation:fadeSlideUp 0.8s 1s ease forwards;opacity:0;}
+.speed-meter svg{width:100%;height:100%;}
+
+/* SECTIONS */
+section{padding:56px 60px;position:relative;}
+.section-label{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--red);letter-spacing:4px;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:10px;}
+.section-label::before{content:'';display:inline-block;width:18px;height:1px;background:var(--red);}
+.section-title{font-family:'Orbitron',monospace;font-size:clamp(22px,3.5vw,38px);font-weight:700;color:var(--bright);margin-bottom:0;line-height:1.1;}
+.section-title span{color:var(--red);}
+
+/* ABOUT */
+#about{background:linear-gradient(135deg,var(--darker) 0%,var(--panel) 100%);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-top:32px;}
+.about-card{background:var(--panel);border:1px solid var(--border);padding:24px;position:relative;overflow:hidden;}
+.about-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--red),transparent);}
+.about-card-header{font-family:'Orbitron',monospace;font-size:10px;color:var(--red);letter-spacing:3px;margin-bottom:14px;}
+.info-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(26,42,74,0.5);font-size:12px;}
+.info-row:last-child{border-bottom:none;}
+.info-key{color:var(--dim);letter-spacing:1px;font-size:11px;text-transform:uppercase;}
+.info-val{color:var(--bright);font-weight:500;}
+.info-val.accent{color:var(--accent);}
+.info-val.red{color:var(--red);}
+.about-text p{font-size:14px;line-height:1.75;color:var(--text);margin-bottom:12px;font-weight:300;}
+.about-text p strong{color:var(--accent);}
+.about-text p:last-child{margin-bottom:0;}
+
+/* SKILLS */
+#skills{background:var(--darker);}
+.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px;}
+.skill-category{background:var(--panel);border:1px solid var(--border);padding:22px;position:relative;overflow:hidden;transition:border-color 0.3s,transform 0.3s;}
+.skill-category:hover{border-color:var(--red);transform:translateY(-3px);}
+.skill-category::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--red),transparent);transform:scaleX(0);transition:transform 0.3s;}
+.skill-category:hover::after{transform:scaleX(1);}
+.skill-cat-title{font-family:'Orbitron',monospace;font-size:11px;color:var(--accent);letter-spacing:2px;margin-bottom:14px;font-weight:700;}
+.skill-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.skill-tag{font-family:'Share Tech Mono',monospace;font-size:10px;padding:4px 10px;border:1px solid var(--border);color:var(--text);transition:all 0.2s;cursor:default;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);background:rgba(0,0,0,0.3);}
+.skill-tag:hover{border-color:var(--red);color:var(--red);background:rgba(230,57,70,0.1);}
+
+/* EXPERIENCE */
+#experience{background:linear-gradient(135deg,var(--panel) 0%,var(--darker) 100%);}
+.timeline{margin-top:32px;position:relative;}
+.timeline::before{content:'';position:absolute;left:22px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,var(--red),var(--border),transparent);}
+.timeline-item{padding-left:58px;margin-bottom:36px;position:relative;}
+.timeline-item:last-child{margin-bottom:0;}
+.timeline-dot{position:absolute;left:14px;top:6px;width:16px;height:16px;border:2px solid var(--red);background:var(--darker);transform:rotate(45deg);box-shadow:0 0 10px rgba(230,57,70,0.5);}
+.timeline-meta{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--dim);letter-spacing:2px;margin-bottom:5px;}
+.timeline-role{font-family:'Orbitron',monospace;font-size:14px;font-weight:700;color:var(--bright);margin-bottom:2px;}
+.timeline-company{font-size:13px;color:var(--red);font-weight:600;letter-spacing:1px;margin-bottom:12px;}
+.timeline-points{list-style:none;padding:0;}
+.timeline-points li{font-size:13px;color:var(--text);line-height:1.65;padding:4px 0 4px 18px;position:relative;font-weight:300;}
+.timeline-points li::before{content:'▸';position:absolute;left:0;color:var(--red);font-size:11px;}
+.badge{display:inline-block;font-family:'Share Tech Mono',monospace;font-size:9px;padding:2px 8px;border:1px solid var(--green);color:var(--green);letter-spacing:1px;margin-left:8px;vertical-align:middle;}
+
+/* PROJECTS */
+#projects{background:var(--darker);}
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px;}
+.project-card{background:var(--panel);border:1px solid var(--border);padding:24px;position:relative;overflow:hidden;transition:all 0.3s;cursor:pointer;}
+.project-card::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(230,57,70,0.04),transparent);transition:left 0.6s;}
+.project-card:hover::before{left:100%;}
+.project-card:hover{border-color:rgba(230,57,70,0.4);transform:translateY(-3px);box-shadow:0 16px 32px rgba(0,0,0,0.4);}
+.project-num{font-family:'Orbitron',monospace;font-size:32px;font-weight:900;color:rgba(230,57,70,0.1);position:absolute;right:16px;top:14px;line-height:1;}
+.project-tag{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--accent);letter-spacing:2px;margin-bottom:8px;text-transform:uppercase;}
+.project-title{font-family:'Orbitron',monospace;font-size:13px;font-weight:700;color:var(--bright);margin-bottom:10px;line-height:1.4;}
+.project-desc{font-size:12px;color:var(--dim);line-height:1.65;font-weight:300;}
+.project-metric{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;}
+.metric-chip{font-family:'Share Tech Mono',monospace;font-size:9px;padding:3px 9px;background:rgba(230,57,70,0.1);border:1px solid rgba(230,57,70,0.3);color:var(--red);}
+
+/* CERTS */
+#certs{background:linear-gradient(135deg,var(--darker) 0%,var(--panel) 100%);}
+.patent-banner{background:var(--panel);border:1px solid rgba(255,215,0,0.3);padding:20px 26px;margin-top:28px;display:flex;align-items:center;gap:20px;position:relative;overflow:hidden;}
+.patent-banner::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--yellow);}
+.patent-icon-wrap{width:44px;height:44px;border:1px solid var(--yellow);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.patent-label{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--yellow);letter-spacing:2px;margin-bottom:4px;}
+.patent-title{font-size:14px;font-weight:600;color:var(--bright);margin-bottom:3px;}
+.patent-num{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--dim);}
+.certs-scroll{display:flex;gap:12px;margin-top:20px;overflow-x:auto;padding-bottom:8px;scrollbar-width:thin;scrollbar-color:var(--red) var(--panel);}
+.cert-card{flex:0 0 200px;background:var(--panel);border:1px solid var(--border);padding:16px;transition:all 0.3s;}
+.cert-card:hover{border-color:var(--red);transform:translateY(-3px);}
+.cert-icon{font-size:20px;margin-bottom:8px;}
+.cert-name{font-size:12px;color:var(--bright);font-weight:600;line-height:1.35;margin-bottom:4px;}
+.cert-issuer{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--dim);letter-spacing:1px;}
+
+/* CONTACT */
+#contact{background:var(--darker);text-align:center;background-image:radial-gradient(ellipse at 50% 50%,rgba(230,57,70,0.06) 0%,transparent 60%);}
+.contact-tagline{font-size:14px;color:var(--dim);margin-top:12px;margin-bottom:32px;font-weight:300;max-width:440px;margin-left:auto;margin-right:auto;}
+.contact-links{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+.contact-link{display:flex;align-items:center;gap:8px;font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--text);text-decoration:none;padding:12px 20px;border:1px solid var(--border);transition:all 0.3s;}
+.contact-link:hover{border-color:var(--red);color:var(--red);box-shadow:0 0 16px rgba(230,57,70,0.2);}
+
+footer{padding:18px 60px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.footer-brand{font-family:'Orbitron',monospace;font-size:11px;color:var(--red);letter-spacing:3px;}
+.footer-copy{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--dim);}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.6s,transform 0.6s;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+#particles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+.particle{position:absolute;width:1px;height:1px;background:var(--red);opacity:0;animation:particleFloat linear infinite;}
+@keyframes particleFloat{0%{opacity:0;transform:translateY(100vh)}10%{opacity:0.4}90%{opacity:0.4}100%{opacity:0;transform:translateY(-20px) translateX(30px)}}
+
+@media(max-width:768px){
+  nav{padding:10px 18px;}
+  section{padding:40px 20px;}
+  .hero-inner{flex-direction:column;padding:0 20px;gap:24px;}
+  .about-grid,.skills-grid,.projects-grid{grid-template-columns:1fr;}
+  .hero-stats{gap:18px;flex-wrap:wrap;}
+  .speed-meter{display:none;}
+  footer{flex-direction:column;gap:8px;text-align:center;padding:14px 20px;}
+}
+</style>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-dot"></div>
+<div id="particles"></div>
+<div class="hud-corner hud-tl"></div>
+<div class="hud-corner hud-tr"></div>
+<div class="hud-corner hud-bl"></div>
+<div class="hud-corner hud-br"></div>
+
+<nav>
+  <div class="nav-logo">BR/K</div>
+  <div class="nav-links">
+    <a href="#about">ABOUT</a>
+    <a href="#skills">SKILLS</a>
+    <a href="#experience">EXP</a>
+    <a href="#projects">PROJECTS</a>
+    <a href="#contact">CONTACT</a>
+  </div>
+  <div class="nav-status"><div class="status-dot"></div>SYSTEM ONLINE</div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-scanline"></div>
+  <svg class="car-silhouette" viewBox="0 0 800 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 200 C100 200 120 160 160 140 C200 120 280 110 340 108 L380 80 C420 60 500 55 560 60 L620 70 C680 78 720 100 740 120 L760 150 L780 180 L760 200 Z" fill="#e63946" opacity="0.6"/>
+    <circle cx="180" cy="210" r="40" fill="#0a0f1e" stroke="#e63946" stroke-width="2"/>
+    <circle cx="180" cy="210" r="25" fill="#050810" stroke="#e63946" stroke-width="1"/>
+    <circle cx="620" cy="210" r="40" fill="#0a0f1e" stroke="#e63946" stroke-width="2"/>
+    <circle cx="620" cy="210" r="25" fill="#050810" stroke="#e63946" stroke-width="1"/>
+    <path d="M350 108 L390 75 L540 60 L580 70 L600 100 Z" fill="#e63946" opacity="0.4"/>
+    <line x1="50" y1="195" x2="760" y2="195" stroke="#e63946" stroke-width="1" opacity="0.3"/>
+  </svg>
+
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-tag">ENGINEER / INNOVATOR / BUILDER</div>
+      <div class="hero-name">BENSON<br><span>RANJITH K</span></div>
+      <div class="hero-role">AI/ML ENGINEER · AUTOMOTIVE TECH</div>
+      <div class="hero-desc">Software Engineer bridging AI systems and embedded development. Building intelligent, high-performance systems that translate complex technical challenges into measurable outcomes — from automotive crack detection to predictive maintenance.</div>
+      <div class="hero-stats">
+        <div class="stat-item"><div class="stat-num">8.18<span>+</span></div><div class="stat-label">CGPA / VIT</div></div>
+        <div class="stat-item"><div class="stat-num">92<span>%</span></div><div class="stat-label">Crack Detection</div></div>
+        <div class="stat-item"><div class="stat-num">16<span>K</span></div><div class="stat-label">LinkedIn Followers</div></div>
+        <div class="stat-item"><div class="stat-num">01</div><div class="stat-label">Filed Patent</div></div>
+      </div>
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">VIEW PROJECTS</button>
+        <button class="btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">CONNECT</button>
+      </div>
+    </div>
+    <div class="speed-meter">
+      <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="80" cy="80" r="70" fill="none" stroke="rgba(26,42,74,0.8)" stroke-width="1"/>
+        <circle cx="80" cy="80" r="60" fill="none" stroke="rgba(26,42,74,0.5)" stroke-width="0.5" stroke-dasharray="4 4"/>
+        <path d="M 25 115 A 60 60 0 1 1 135 115" fill="none" stroke="rgba(26,42,74,0.6)" stroke-width="6" stroke-linecap="round"/>
+        <path id="speedArc" d="M 25 115 A 60 60 0 1 1 135 115" fill="none" stroke="#e63946" stroke-width="6" stroke-linecap="round" stroke-dasharray="0 300" style="filter:drop-shadow(0 0 6px #e63946)"/>
+        <text x="80" y="90" text-anchor="middle" fill="#fff" font-family="Orbitron,monospace" font-size="18" font-weight="900" id="speedNum">0</text>
+        <text x="80" y="106" text-anchor="middle" fill="rgba(200,214,240,0.5)" font-family="Rajdhani,sans-serif" font-size="10" letter-spacing="2">km/h</text>
+        <text x="80" y="124" text-anchor="middle" fill="#e63946" font-family="Share Tech Mono,monospace" font-size="8" letter-spacing="1">PERFORMANCE</text>
+        <line x1="80" y1="80" x2="80" y2="30" stroke="#e63946" stroke-width="1.5" stroke-linecap="round" id="speedNeedle" style="transform-origin:80px 80px;transform:rotate(-135deg);transition:transform 0.05s"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">SYSTEM PROFILE</div>
+  <h2 class="section-title">ABOUT <span>ME</span></h2>
+  <div class="about-grid reveal">
+    <div class="about-card">
+      <div class="about-card-header">// IDENTITY_MODULE.exe</div>
+      <div class="info-row"><span class="info-key">Name</span><span class="info-val">Benson Ranjith K</span></div>
+      <div class="info-row"><span class="info-key">Degree</span><span class="info-val accent">MTech Integrated — Soft. Eng.</span></div>
+      <div class="info-row"><span class="info-key">Institute</span><span class="info-val">VIT, Vellore</span></div>
+      <div class="info-row"><span class="info-key">Graduation</span><span class="info-val">2026</span></div>
+      <div class="info-row"><span class="info-key">Email</span><span class="info-val red">contact.bensonranjith@gmail.com</span></div>
+      <div class="info-row"><span class="info-key">Phone</span><span class="info-val accent">+91 9626190909</span></div>
+      <div class="info-row"><span class="info-key">Languages</span><span class="info-val">English · Tamil · German</span></div>
+      <div class="info-row"><span class="info-key">Status</span><span class="info-val red">R&D Intern @ Nokia ▸ Live</span></div>
+    </div>
+    <div class="about-text">
+      <p>A <strong>Software Engineer</strong> with deep expertise in AI/ML systems and embedded development, with hands-on experience across the full Agile/SCRUM delivery cycle.</p>
+      <p>A natural problem-solver bridging research and real-world engineering — focused on building <strong>intelligent, high-performance systems</strong> that streamline workflows.</p>
+      <p>Passionate about <strong>automotive technology</strong>, from surface crack detection to DDoS protection in vehicle networks and AI-driven predictive maintenance.</p>
+      <p>Currently pushing boundaries at <strong>Nokia, Bangalore</strong> — automating network performance testing and integrating CI/CD pipelines for faster releases.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">CAPABILITY INDEX</div>
+  <h2 class="section-title">TECH <span>STACK</span></h2>
+  <div class="skills-grid reveal">
+    <div class="skill-category">
+      <div class="skill-cat-title">⚡ PROGRAMMING LANGUAGES</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Java</span><span class="skill-tag">Python</span><span class="skill-tag">C/C++</span><span class="skill-tag">JavaScript</span><span class="skill-tag">MATLAB</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <div class="skill-cat-title">🧠 AI / ML FRAMEWORKS</div>
+      <div class="skill-tags">
+        <span class="skill-tag">TensorFlow</span><span class="skill-tag">PyTorch</span><span class="skill-tag">OpenCV</span><span class="skill-tag">scikit-learn</span><span class="skill-tag">LangChain</span><span class="skill-tag">LSTM</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <div class="skill-cat-title">🌐 WEB & BACKEND</div>
+      <div class="skill-tags">
+        <span class="skill-tag">React.js</span><span class="skill-tag">Node.js</span><span class="skill-tag">Django</span><span class="skill-tag">Spring Boot</span><span class="skill-tag">Express.js</span><span class="skill-tag">REST APIs</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <div class="skill-cat-title">🔧 TOOLS & DEVOPS</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Git</span><span class="skill-tag">Jenkins</span><span class="skill-tag">AWS IoT</span><span class="skill-tag">Power BI</span><span class="skill-tag">JIRA</span><span class="skill-tag">MongoDB</span><span class="skill-tag">MySQL</span><span class="skill-tag">Figma</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">MISSION LOG</div>
+  <h2 class="section-title">EXPERIENCE <span>RECORD</span></h2>
+  <div class="timeline reveal">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-meta">AUG 2025 — JUN 2026 · BANGALORE, ON-SITE</div>
+      <div class="timeline-role">R&D INTERN <span class="badge">CURRENT</span></div>
+      <div class="timeline-company">NOKIA</div>
+      <ul class="timeline-points">
+        <li>Developed automated network performance test suites using Python — reduced manual testing effort by <strong style="color:#e63946">12%</strong> and improved test coverage.</li>
+        <li>Simulated high-traffic scenarios to evaluate scalability and validate network performance under multiple load conditions.</li>
+        <li>Integrated performance testing into CI/CD pipelines (Jenkins) — decreased validation time by <strong style="color:#e63946">30%</strong>.</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-meta">MAY 2023 — JUN 2023 · TUTICORIN, ON-SITE</div>
+      <div class="timeline-role">SOFTWARE DEVELOPMENT INTERN</div>
+      <div class="timeline-company">VOC PORT AUTHORITY</div>
+      <ul class="timeline-points">
+        <li>Built a vessel monitoring application enabling real-time tracking — improved operational efficiency by <strong style="color:#e63946">30%</strong>.</li>
+        <li>Deployed an ML model to predict vessel demands — reduced idle time by <strong style="color:#e63946">25%</strong> and optimized resource allocation.</li>
+        <li>Optimized database via restructured queries and indexing — achieved <strong style="color:#e63946">15%</strong> faster response times.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">BUILD LOG</div>
+  <h2 class="section-title">KEY <span>PROJECTS</span></h2>
+  <div class="projects-grid reveal">
+    <div class="project-card">
+      <div class="project-num">01</div>
+      <div class="project-tag">AUTOMOTIVE · COMPUTER VISION</div>
+      <div class="project-title">Surface Crack Detection in Automotive Components</div>
+      <div class="project-desc">Ensemble learning model combining CNN, Random Forest, KNN and XGBoost to improve crack detection accuracy. Implemented data augmentation to reduce false positives on diverse automotive surfaces.</div>
+      <div class="project-metric"><span class="metric-chip">92% Detection Rate</span><span class="metric-chip">-25% False Positives</span></div>
+    </div>
+    <div class="project-card">
+      <div class="project-num">02</div>
+      <div class="project-tag">AUTOMOTIVE · PREDICTIVE AI</div>
+      <div class="project-title">AI-Driven Predictive Maintenance in Automotive Manufacturing</div>
+      <div class="project-desc">AI-based predictive maintenance using Random Forest and LSTM models to detect early equipment failure. Continuous monitoring via AWS IoT and REST APIs.</div>
+      <div class="project-metric"><span class="metric-chip">-30% Downtime</span><span class="metric-chip">+20% Efficiency</span></div>
+    </div>
+    <div class="project-card">
+      <div class="project-num">03</div>
+      <div class="project-tag">AUTOMOTIVE · CYBERSECURITY</div>
+      <div class="project-title">AI-based DDoS Detection for SDN in Automotive Networks</div>
+      <div class="project-desc">AI-based system for detecting DDoS attacks in software-defined automotive networks, ensuring secure and reliable vehicle communications.</div>
+      <div class="project-metric"><span class="metric-chip">SDN Security</span><span class="metric-chip">V2X Protection</span></div>
+    </div>
+    <div class="project-card">
+      <div class="project-num">04</div>
+      <div class="project-tag">NLP · LLM</div>
+      <div class="project-title">Conversational PDF Assistant (German Language)</div>
+      <div class="project-desc">Built using LangChain and LLMs, enabling natural language interaction with German-language PDF documents for efficient information retrieval and summarization.</div>
+      <div class="project-metric"><span class="metric-chip">LangChain</span><span class="metric-chip">Multilingual NLP</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTS & PATENT -->
+<section id="certs">
+  <div class="section-label">CREDENTIALS</div>
+  <h2 class="section-title">CERTS & <span>PATENT</span></h2>
+  <div class="patent-banner reveal">
+    <div class="patent-icon-wrap">🏅</div>
+    <div>
+      <div class="patent-label">// FILED PATENT</div>
+      <div class="patent-title">GPS-Enabled Collar with Activity Monitoring</div>
+      <div class="patent-num">APP NO: 438828-001 · PUBLISHED: 27 JAN 2025 · INDIAN PATENT OFFICE</div>
+    </div>
+  </div>
+  <div class="certs-scroll reveal">
+    <div class="cert-card"><div class="cert-icon">🤖</div><div class="cert-name">Machine Learning Specialization</div><div class="cert-issuer">STANFORD · COURSERA</div></div>
+    <div class="cert-card"><div class="cert-icon">🚗</div><div class="cert-name">Advanced Driver Assistance Systems (ADAS)</div><div class="cert-issuer">UDEMY</div></div>
+    <div class="cert-card"><div class="cert-icon">🏎️</div><div class="cert-name">Intro to Automotive Embedded Systems</div><div class="cert-issuer">COURSERA</div></div>
+    <div class="cert-card"><div class="cert-icon">☁️</div><div class="cert-name">Attention Mechanism</div><div class="cert-issuer">GOOGLE CLOUD · COURSERA</div></div>
+    <div class="cert-card"><div class="cert-icon">📊</div><div class="cert-name">Google Project Management Professional</div><div class="cert-issuer">GOOGLE · COURSERA</div></div>
+    <div class="cert-card"><div class="cert-icon">🌐</div><div class="cert-name">Industrial Internet of Things (IIoT)</div><div class="cert-issuer">UNIV OF MICHIGAN</div></div>
+    <div class="cert-card"><div class="cert-icon">🔷</div><div class="cert-name">Oracle Autonomous Database Professional</div><div class="cert-issuer">ORACLE</div></div>
+    <div class="cert-card"><div class="cert-icon">⚙️</div><div class="cert-name">Automation Anywhere Certified RPA Pro</div><div class="cert-issuer">AUTOMATION ANYWHERE</div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label" style="justify-content:center">INITIATE CONTACT</div>
+  <h2 class="section-title" style="text-align:center">LET'S <span>CONNECT</span></h2>
+  <p class="contact-tagline">Open to opportunities, collaborations, and conversations. Let's build something extraordinary.</p>
+  <div class="contact-links reveal">
+    <a href="mailto:contact.bensonranjith@gmail.com" class="contact-link"><span>✉</span>contact.bensonranjith@gmail.com</a>
+    <a href="https://linkedin.com" class="contact-link"><span>in</span>LinkedIn · 16K+ Followers</a>
+    <a href="https://github.com" class="contact-link"><span>⌥</span>GitHub Profile</a>
+    <a href="tel:+919626190909" class="contact-link"><span>📞</span>+91 9626190909</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">BENSON RANJITH K</div>
+  <div class="footer-copy">© 2026 · BUILT WITH PRECISION · VIT VELLORE</div>
+</footer>
+
+<script>
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  const dot = document.getElementById('cursor-dot');
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+    dot.style.left = e.clientX + 'px';
+    dot.style.top = e.clientY + 'px';
+  });
+
+  // Floating particles
+  const pContainer = document.getElementById('particles');
+  for (let i = 0; i < 20; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.cssText = `left:${Math.random() * 100}%;animation-duration:${6 + Math.random() * 12}s;animation-delay:${Math.random() * 10}s;`;
+    pContainer.appendChild(p);
+  }
+
+  // Speed meter
+  const arc = document.getElementById('speedArc');
+  const needle = document.getElementById('speedNeedle');
+  const numEl = document.getElementById('speedNum');
+  const totalDash = 314;
+  let speed = 0, target = 0, dir = 1;
+  setInterval(() => {
+    target += dir * (8 + Math.random() * 15);
+    if (target > 240) dir = -1;
+    if (target < 20) dir = 1;
+  }, 800);
+  function animSpeed() {
+    speed += (target - speed) * 0.04;
+    const pct = Math.min(speed / 260, 1);
+    arc.style.strokeDasharray = `${pct * totalDash} ${totalDash}`;
+    needle.style.transform = `rotate(${-135 + (pct * 270)}deg)`;
+    numEl.textContent = Math.round(speed);
+    requestAnimationFrame(animSpeed);
+  }
+  animSpeed();
+
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
+</script>
+</body>
+</html>
