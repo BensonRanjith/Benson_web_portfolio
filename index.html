@@ -175,6 +175,19 @@ footer{padding:18px 60px;border-top:1px solid var(--border);display:flex;justify
 
 #particles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
 .particle{position:absolute;width:1px;height:1px;background:var(--red);opacity:0;animation:particleFloat linear infinite;}
+@keyframes infinityGlow{
+  0%{
+    filter:drop-shadow(0 0 4px #e63946);
+  }
+
+  50%{
+    filter:drop-shadow(0 0 18px #e63946);
+  }
+
+  100%{
+    filter:drop-shadow(0 0 4px #e63946);
+  }
+}
 @keyframes particleFloat{0%{opacity:0;transform:translateY(100vh)}10%{opacity:0.4}90%{opacity:0.4}100%{opacity:0;transform:translateY(-20px) translateX(30px)}}
 
 @media(max-width:768px){
