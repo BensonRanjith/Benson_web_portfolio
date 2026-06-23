@@ -464,25 +464,50 @@ footer{padding:18px 60px;border-top:1px solid var(--border);display:flex;justify
   }
 
   // Speed meter
-  const arc = document.getElementById('speedArc');
-  const needle = document.getElementById('speedNeedle');
-  const numEl = document.getElementById('speedNum');
-  const totalDash = 314;
-  let speed = 0, target = 0, dir = 1;
-  setInterval(() => {
-    target += dir * (8 + Math.random() * 15);
-    if (target > 240) dir = -1;
-    if (target < 20) dir = 1;
-  }, 800);
-  function animSpeed() {
-    speed += (target - speed) * 0.04;
-    const pct = Math.min(speed / 260, 1);
-    arc.style.strokeDasharray = `${pct * totalDash} ${totalDash}`;
-    needle.style.transform = `rotate(${-135 + (pct * 270)}deg)`;
-    numEl.textContent = Math.round(speed);
-    requestAnimationFrame(animSpeed);
+const arc = document.getElementById('speedArc');
+const needle = document.getElementById('speedNeedle');
+const numEl = document.getElementById('speedNum');
+
+const totalDash = 314;
+
+let speed = 0;
+const maxSpeed = 300;
+let finished = false;
+
+function animSpeed() {
+
+  if (!finished) {
+    speed += 0.8;
+
+    if (speed >= maxSpeed) {
+
+      speed = maxSpeed;
+      finished = true;
+
+      arc.style.animation = "infinityGlow 3s infinite";
+
+      setTimeout(() => {
+        numEl.textContent = "∞";
+      }, 500);
+    }
   }
-  animSpeed();
+
+  const pct = Math.min(speed / maxSpeed, 1);
+
+  arc.style.strokeDasharray =
+    `${pct * totalDash} ${totalDash}`;
+
+  needle.style.transform =
+    `rotate(${-135 + (pct * 270)}deg)`;
+
+  if (!finished) {
+    numEl.textContent = Math.round(speed);
+  }
+
+  requestAnimationFrame(animSpeed);
+}
+
+animSpeed();
 
   // Scroll reveal
   const obs = new IntersectionObserver(entries => {
