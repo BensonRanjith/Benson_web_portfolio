@@ -494,16 +494,17 @@ section:not(#hero){
   Example:
   src="images/benson.png"
 */
-.portrait-note{
+.portrait-placeholder{
   position:absolute;
-  left:-95px;
-  bottom:55px;
+  left:50%;
+  bottom:12px;
+  transform:translateX(-50%) rotate(-2deg);
+  width:85%;
+  text-align:center;
   font-family:var(--hand);
-  font-size:30px;
-  color:var(--blue);
-  transform:rotate(-9deg);
-  z-index:10;
-  white-space:nowrap;
+  font-size:18px;
+  color:rgba(23,32,42,.45);
+  pointer-events:none;
 }
 
 .portrait-note{
@@ -512,7 +513,7 @@ section:not(#hero){
   bottom:25px;
   font-family:var(--hand);
   font-size:25px;
-  color:#102A43;
+  color:var(--blue);
   transform:rotate(-9deg);
 }
 
@@ -1338,15 +1339,134 @@ footer{
 }
 
 @media(max-width:540px){
+  /* Keep the mobile layout clean without changing desktop styling. */
+  nav{
+    width:calc(100% - 20px);
+    margin-top:8px;
+    padding:8px 12px;
+  }
+
   .nav-logo{font-size:24px}
+
+  .nav-links{
+    gap:15px;
+  }
+
+  .nav-links a{
+    font-size:15px;
+  }
+
   .nav-links a:nth-child(2),
   .nav-links a:nth-child(3){display:none}
 
-  .hero-stats{gap:18px}
+  section{
+    padding-left:18px;
+    padding-right:18px;
+  }
+
+  #hero{
+    padding-top:112px;
+    padding-bottom:65px;
+  }
+
+  .hero-inner{
+    gap:42px;
+  }
+
+  .hero-kicker{
+    font-size:21px;
+    line-height:1.2;
+    max-width:300px;
+  }
+
+  .hero-kicker::before{
+    width:30px;
+    margin-right:7px;
+  }
+
+  .hero-name{
+    font-size:clamp(56px,17vw,78px);
+    line-height:.82;
+    letter-spacing:-2px;
+  }
+
+  .hero-name span{
+    margin-left:10px;
+    margin-top:14px;
+  }
+
+  .hero-role{
+    margin-top:27px;
+    font-size:19px;
+    line-height:1.2;
+  }
+
+  .hero-desc{
+    margin-top:15px;
+    font-size:17px;
+    line-height:1.5;
+  }
+
+  .hero-stats{
+    gap:10px;
+    margin-top:24px;
+    flex-wrap:nowrap;
+    width:100%;
+  }
 
   .stat-item{
-    min-width:95px;
-    padding-right:10px;
+    min-width:0;
+    flex:1 1 0;
+    padding-right:8px;
+  }
+
+  .stat-num{
+    font-size:31px;
+  }
+
+  .stat-num span{
+    font-size:20px;
+  }
+
+  .stat-label{
+    font-size:8px;
+    letter-spacing:.7px;
+  }
+
+  .hero-cta{
+    margin-top:24px;
+    gap:10px;
+  }
+
+  .btn{
+    font-size:17px;
+    padding:8px 16px;
+  }
+
+  /* Prevent decorative elements from sitting over readable content. */
+  .engineer-doodles{
+    display:none;
+  }
+
+  .doodle-note,
+  .doodle-star{
+    display:none;
+  }
+
+  .portrait-wrap{
+    max-width:300px;
+  }
+
+  .portrait-note{
+    left:-8px;
+    bottom:30px;
+    font-size:24px;
+  }
+
+  .about-grid,
+  .skills-grid,
+  .projects-grid{
+    grid-template-columns:1fr;
   }
 
   .info-row{
@@ -1504,7 +1624,7 @@ footer{
     -->
     <div class="portrait-wrap">
       <div class="portrait-note">
-        It's me
+        That's me.         .
         <span class="arrow"></span>
       </div>
 
