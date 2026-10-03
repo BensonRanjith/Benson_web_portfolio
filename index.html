@@ -2006,41 +2006,47 @@ document.querySelectorAll('.project-card, .cert-card, .skill-category').forEach(
 
 
 /* Skill cards: short handwritten-style explanations */
-const skillModal = document.getElementById('skillModal');
-const skillModalTitle = document.getElementById('skillModalTitle');
-const skillModalText = document.getElementById('skillModalText');
+document.addEventListener('DOMContentLoaded', () => {
 
-function openSkillModal(skill, description){
-  if(!skillModal || !skillModalTitle || !skillModalText) return;
-  skillModalTitle.textContent = skill;
-  skillModalText.textContent = description;
-  skillModal.classList.add('open');
-  skillModal.setAttribute('aria-hidden','false');
-  document.body.style.overflow = 'hidden';
-}
+  const skillModal = document.getElementById('skillModal');
+  const skillModalTitle = document.getElementById('skillModalTitle');
+  const skillModalText = document.getElementById('skillModalText');
 
-function closeSkillModal(){
-  if(!skillModal) return;
-  skillModal.classList.remove('open');
-  skillModal.setAttribute('aria-hidden','true');
-  document.body.style.overflow = '';
-}
+  function openSkillModal(skill, description){
+    if(!skillModal || !skillModalTitle || !skillModalText) return;
 
-document.querySelectorAll('.skill-clickable').forEach(skill => {
-  skill.addEventListener('click', () => {
-    openSkillModal(
-      skill.dataset.skill || skill.textContent.trim(),
-      skill.dataset.description || 'A technology used in my engineering workflow.'
-    );
+    skillModalTitle.textContent = skill;
+    skillModalText.textContent = description;
+    skillModal.classList.add('open');
+    skillModal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeSkillModal(){
+    if(!skillModal) return;
+
+    skillModal.classList.remove('open');
+    skillModal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.skill-clickable').forEach(skill => {
+    skill.addEventListener('click', () => {
+      openSkillModal(
+        skill.dataset.skill || skill.textContent.trim(),
+        skill.dataset.description || 'A technology used in my engineering workflow.'
+      );
+    });
   });
-});
 
-document.querySelectorAll('[data-close-skill]').forEach(el => {
-  el.addEventListener('click', closeSkillModal);
-});
+  document.querySelectorAll('[data-close-skill]').forEach(el => {
+    el.addEventListener('click', closeSkillModal);
+  });
 
-document.addEventListener('keydown', e => {
-  if(e.key === 'Escape') closeSkillModal();
+  document.addEventListener('keydown', e => {
+    if(e.key === 'Escape') closeSkillModal();
+  });
+
 });
 
 /* Keep portrait fallback useful even if the image is removed */
